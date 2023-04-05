@@ -1,0 +1,19 @@
+@keyframes floatY {
+
+    to {
+        transform: translateY(5px);
+
+    }
+}
+
+
+@keyframes opacity {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
