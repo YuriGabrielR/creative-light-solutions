@@ -74,31 +74,41 @@ body {
 
 
 .txt_descriptions {
-    @include flexCenter(column, 40px);
+    @include flexCenter(column, 60px);
+    align-items: left;
+    justify-content: start;
 
-    padding-left: 10px;
 
-    p {
-        color: #455A64;
-        font-size: 20px;
-        font-weight: 700;
-        text-align: left;
-        width: 100%;
+    @media screen and (max-width:905px) {
+        order: -1;
+        
     }
-
 
     @media screen and (max-width:970px) {
         gap: 30px;
-
-
     }
 
+    p {
+        color: #455a64ee;
+        font-weight: 700;
+        text-align: left;
+        width: 100%;  
+    }
+
+    #txt-primary{
+
+        font-size: clamp(1.5vw, 16px, 20px);
+
+        @media  (max-width:970px){
+            font-size: clamp(2vw, 5vw, 20px);
+            text-align: center;
+        }
+    }
 }
 
 
 .main-txt {
-    @include flexCenter(column, 0px);
-
+   
     width: 100%;
 
 
@@ -107,59 +117,42 @@ body {
         align-items: start;
         width: 100%;
         color: #4B2D73;
-        font-size: clamp(2vw, 4vw , 3.2em);
+        
+        font-size: clamp(4vw, 4vw , 3.2em);
 
-        @media  (max-width:970px) {
-            
+
+        @media  (max-width:680px){
+            font-size: clamp(5vw, 6vw , 3.2em);
+        }
+
+        @media  (max-width:970px){
             flex-direction: row;
         }
+
     }
 
     h2 {
         color: #4b2d73e0;
         font-size: 2.15em;
-        text-align: left;
         width: 100%;
         font-family: 'Edu NSW ACT Foundation', cursive;
 
-
-        @media screen and (max-width: 905px) {
-            color: #4b2d73;
-            font-size: 2em;
-            text-align: center;
-
+        @media  (max-width:430px) {
+            font-size: 1.8em; 
+            text-align: left;
         }
 
-        @media screen and (max-width:691px) {
-            color: #4b2d73;
-            font-size: 2em;
-            text-align: center;
-
-        }
-
-        @media screen and (max-width:528px) {
+        @media  (max-width:970px){
             color: #4b2d73;
             text-align: center;
-            font-size: 2.40em;
-
+            
         }
 
-        @media screen and (max-width:481px) {
-            justify-content: center;
-            font-size: 2em;
-
-        }
-
-        @media screen and (max-width:375px) {
-            font-size: 1.70em;
-
-        }
-
-
+        
     }
 
     .light{
-        @include flexCenter(row, 4px);
+        @include flexCenter(row, 10px);
 
         .fa-lightbulb{
             font-size: clamp(24px, 4vw, 52px);
@@ -169,10 +162,10 @@ body {
     }
 
     .magic{
-        @include flexCenter(row, 4px);
+        @include flexCenter(row, 8px);
 
         .fa-wand-magic-sparkles{
-            font-size: clamp(24px, 4vw, 52px);
+            font-size: clamp(24px, 4vw, 45px);
         } 
     }
 
@@ -182,9 +175,11 @@ body {
     }
 
 
-    @media screen and (max-width:691px) {
-        gap: 15px;
-
+    @media  (max-width:970px){
+        color: #4b2d73;
+        text-align: center;
+        
+        
     }
 
 }
@@ -192,68 +187,62 @@ body {
 
 
 .steps {
-    @include flexCenter(row, 30px);
+    @include flexCenter(row, 15px);
     justify-content: left;
+   
     width: 100%;
 
-
-    @media screen and (max-width:1099px) {
-        gap: 16px;
-
-    }
-
-    @media screen and (max-width:970px) {
-        font-size: 13px;
-        width: 80%;
-    }
-
-
-    @media (max-width:905px) {
-
+    @media screen and (max-width:905px) {
         display: none;
-
     }
 }
 
 .steps-content {
-    width: 100%;
+   
+    width:100%;
 
     h3 {
+        font-size: clamp(1vw, 1.3vw, 17px);
+        
         color: #4B2D73;
-        font-weight: 600;
+        
     }
 
     p {
-
-        font-size: 1em;
+        padding-top: 3px;
+        font-size: 16px;
         color: #8d8d8d;
-        height: 50px;
+        height: 35px;
         width: 100%;
 
-        @media screen and (max-width:1280px) {
+        font-size: clamp(1vw, 1.2vw, 16px);
+    }
 
-
-            font-size: 15px;
-        }
-
-
-        @media screen and (max-width:1099px) {
-            font-size: 13px;
-
-
-        }
-
-
+    @media  (max-width:970px){
+     p,h3{
+        text-align: center;
+     }
     }
 }
 
 .drop-main {    
     display: none;
     width: 100%;
+    padding: 5px;
+
+
     @media (max-width:905px) {
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
+        height: 202px;
     }
+}
+
+
+.drop-img{
+width: 50%;
+height: auto;
+filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
 }
 
 @keyframes menuDrop {
@@ -264,16 +253,16 @@ body {
 
 .content-drop {
     @include flexCenter(column, 2px);
-    padding: 10px;
+ 
     transition: 0.3s ease-in-out;
+    width:70%;
 }
 
 .title-dropMenu {
-    @include flexCenter(row, 5px);
-    justify-content: left;
-    color: #4b2d73;
+    @include flexCenter(row, 3px);
+    color: #4b2d73ec;
     font-weight: 700;
-    font-size: 16px;
+     font-size: clamp(1vw, 2vw, 12px);
     text-align: left;
     text-transform: uppercase;
     width: 100%;
@@ -282,7 +271,7 @@ body {
     .btnDrop{
         
         cursor: pointer;
-        font-size: 20px;
+        font-size: px;
         transition: 0.3s all;
 
         &.active{
@@ -299,9 +288,10 @@ body {
     opacity: 0;
     transition: max-height 0.3s ease-in-out;
     p{
+        @include flexCenter(row, 3px);
         opacity: 0;
         color: #37474F;
-        font-size: 16px;
+        font-size: clamp(1vw, 2vw, 12px);
         font-weight: 500;
         text-align: left;
         animation: menuDrop 0.5s forwards ease-in-out;
@@ -316,12 +306,30 @@ body {
     }
 }
 
+.md-btn{
+    @include flexCenter(row, 3px);
+    background-color: #37474F;
+    width: 50px;
+    border: 1px solid #4B2D73;
+    border-radius: 5px;
+
+    a{
+        
+        font-size: 10px;
+        color: #FFFDFB;
+
+    }
+}
+
 .img-sectionMain {
+    @media screen and (max-width:905px) {
+        order: -1;
+    }
 
     .img-main {
         width: 450px;
         height: auto;
-
+        
         @media screen and (max-width:1280px) {
 
             width: 350px;
@@ -331,15 +339,20 @@ body {
             width: 320px;
         }
 
+        @media screen and (max-width:905px) {
+            width: 270px;
+        }
+        
         @media (max-width:680px) {
             width: 280px;
+
         }
 
         @media screen and (max-width:528px) {
             width: 300px;
 
         }
-
+    
         @media screen and (max-width:434px) {
             width: 250px;
         }
@@ -419,7 +432,6 @@ footer {
     }
 
     @media (max-width:905px) {
-
         display: none;
 
     }
@@ -572,13 +584,8 @@ footer {
     background-color: #FFFDFB;
     transition: 0.4s all;
 
-
-
     @media (max-width:680px) {
-
         background-color: #4B2D73;
-
-
     }
 
 }
@@ -622,7 +629,6 @@ footer {
         justify-content: center;
         position: absolute;
         bottom: 50px;
-
     }
 
 }
@@ -727,9 +733,7 @@ footer {
     }
 
     @media (max-width:905px) {
-
         display: none;
-
     }
 
 }
@@ -860,9 +864,7 @@ footer {
 
 
     @media (max-width:905px) {
-
         display: none;
-
     }
 }
 
@@ -945,7 +947,6 @@ footer {
 
         transition: 0.4s ease-in-out;
     }
-
 
     &:hover::before {
         cursor: pointer;

@@ -7,8 +7,9 @@ let btns = btnDropDown.forEach((e) => {
 
     e.addEventListener('click', (e) => {
        let divDropDown = e.target.parentNode.parentNode.childNodes[3];
-       let btnReadMore = e.target.parentNode.parentNode.childNodes[1].firstElementChild;
+       let btnReadMore = e.target.parentNode.parentNode.childNodes[1].lastElementChild;
 
+      
        divDropDown.classList.toggle('active');
        btnReadMore.classList.toggle('active');
     })
