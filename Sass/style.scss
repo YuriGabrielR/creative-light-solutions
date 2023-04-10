@@ -37,44 +37,27 @@ body {
 
 .main {
     position: relative;
-    @include flexCenter(column, 0px);
+    @include flexCenter(row, 1px);
     width: 100%;
     height: 100vh;
 }
 
-
-.content-main {
-    @include flexCenter(column, 10px);
-    width: 100%;
-
-
-}
-
-.descriptions-main {
-    @include flexCenter(column, 0px);
-
-}
-
-
 .content-descriptions {
     @include flexCenter(row, 20px);
-    justify-content: space-between;
     padding: 20px;
 
-    @media screen and (max-width:970px) {
-        
-        gap: 0px;
+    @media (max-width:970px) {
+        gap: 20px;
         flex-wrap: wrap;
-        justify-content: center;
-        padding: 0;
+        padding: none;
+    }
+
+    @media (min-width:681px) and (max-width:840px) {
+        height: 100vh;
+        justify-content: space-around;
 
     }
 
-    @media screen and (max-width:430px) {
-        
-     gap:10px;
-
-    }
 
 }
 
@@ -85,12 +68,12 @@ body {
     justify-content: start;
 
 
-    @media screen and (max-width:905px) {
+    @media (max-width:905px) {
         order: -1;
-        
+
     }
 
-    @media screen and (max-width:970px) {
+    @media (max-width:970px) {
         gap: 30px;
     }
 
@@ -98,23 +81,35 @@ body {
         color: #455a64ee;
         font-weight: 700;
         text-align: left;
-        width: 100%;  
+        width: 100%;
     }
 
-    #txt-primary{
+    #txt-primary {
 
         font-size: clamp(1.5vw, 16px, 20px);
 
-        @media  (max-width:970px){
+
+
+
+        @media (max-width:970px) {
             font-size: clamp(2vw, 5vw, 20px);
             text-align: center;
         }
+
+        @media (min-width:681px) and (max-width:840px) {
+
+            font-size: 26px;
+
+        }
+
     }
+
+
 }
 
 
 .main-txt {
-   
+
     width: 100%;
 
 
@@ -123,17 +118,25 @@ body {
         align-items: start;
         width: 100%;
         color: #4B2D73;
-        
-        font-size: clamp(4vw, 4vw , 3.2em);
 
+        font-size: clamp(4vw, 4vw, 3.2em);
 
-        @media  (max-width:680px){
-            font-size: clamp(5vw, 6vw , 3.2em);
-        }
-
-        @media  (max-width:970px){
+        @media (max-width:970px) {
             flex-direction: row;
         }
+
+        @media (min-width:681px) and (max-width:840px) {
+
+            font-size: 36px;
+
+        }
+
+        @media (max-width:680px) {
+            font-size: clamp(5vw, 5.8vw, 3.2em);
+        }
+
+
+
 
     }
 
@@ -143,36 +146,38 @@ body {
         width: 100%;
         font-family: 'Edu NSW ACT Foundation', cursive;
 
-        @media  (max-width:430px) {
-            font-size: 1.8em; 
-            text-align: left;
+        @media (max-width:970px) {
+            color: #4b2d73;
+            text-align: center;
+
         }
 
-        @media  (max-width:970px){
-            color: #4b2d73;
+
+        @media (max-width:430px) {
+            font-size: 1.5em;
             text-align: center;
             
         }
+    
 
-        
     }
 
-    .light{
+    .light {
         @include flexCenter(row, 10px);
 
-        .fa-lightbulb{
+        .fa-lightbulb {
             font-size: clamp(24px, 4vw, 52px);
         }
-        
-        
+
+
     }
 
-    .magic{
+    .magic {
         @include flexCenter(row, 8px);
 
-        .fa-wand-magic-sparkles{
+        .fa-wand-magic-sparkles {
             font-size: clamp(24px, 4vw, 45px);
-        } 
+        }
     }
 
 
@@ -181,11 +186,11 @@ body {
     }
 
 
-    @media  (max-width:970px){
+    @media (max-width:970px) {
         color: #4b2d73;
         text-align: center;
-        
-        
+
+
     }
 
 }
@@ -195,23 +200,23 @@ body {
 .steps {
     @include flexCenter(row, 15px);
     justify-content: left;
-   
+
     width: 100%;
 
-    @media screen and (max-width:905px) {
+    @media (max-width:905px) {
         display: none;
     }
 }
 
 .steps-content {
-   
-    width:100%;
+
+    width: 100%;
 
     h3 {
         font-size: clamp(1vw, 1.3vw, 17px);
-        
+
         color: #4B2D73;
-        
+
     }
 
     p {
@@ -224,14 +229,16 @@ body {
         font-size: clamp(1vw, 1.2vw, 16px);
     }
 
-    @media  (max-width:970px){
-     p,h3{
-        text-align: center;
-     }
+    @media (max-width:970px) {
+
+        p,
+        h3 {
+            text-align: center;
+        }
     }
 }
 
-.drop-main {    
+.drop-main {
     display: none;
     width: 100%;
     padding: 5px;
@@ -243,44 +250,51 @@ body {
         height: 202px;
     }
 
-    @media screen and (max-width:430px) {
+    @media (max-width:430px) {
         flex-direction: column;
+        justify-content: start;
+        align-items: center;
         height: auto;
-        gap:20px;
+        gap: 20px;
 
     }
 }
 
 
-.drop-img{
-width: 50%;
-height: auto;
-filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
+.drop-img {
+    width: 50%;
+    height: auto;
+    filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
 
-    @media screen and (max-width:430px) {
-     width: 40%;
-     gap:10px;
+    @media (max-width:430px) {
+        width: 40%;
+       
+    }
 
+    @media (max-width:430px) {
+        width: 50%;
+       
     }
 }
 
 @keyframes menuDrop {
-    to{
+    to {
         opacity: 1;
     }
 }
 
 .content-drop {
     @include flexCenter(column, 2px);
- 
-    transition: 0.3s ease-in-out;
-    width:70%;
+    justify-content: start;
 
-    @media screen and (max-width:430px) {
+    transition: 0.3s ease-in-out;
+    width: 70%;
+
+    @media (max-width:430px) {
         flex-direction: row;
         width: 100%;
         height: auto;
-        gap: 0px;
+        gap: 12px;
 
     }
 }
@@ -289,33 +303,29 @@ filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
     @include flexCenter(row, 3px);
     color: #4b2d73ec;
     font-weight: 700;
-    font-size: clamp(1vw, 2vw, 12px);
+    font-size: clamp(1vw, 2vw, 13px);
     text-align: left;
     text-transform: uppercase;
     width: 100%;
     transition: 0.3s ease-in-out;
 
-    .btnDrop{
-        
+    .btnDrop {
+
         cursor: pointer;
         font-size: px;
         transition: 0.3s all;
 
-        &.active{
+        &.active {
             transform: rotate(180deg);
         }
     }
 
-    @media screen and (max-width:430px) {
-        padding-left: 20px;
-        justify-content: left;
-    
-    }
 
     @media (max-width:430px) {
-              
-        font-size: clamp(1.50vw, 2.50vw, 18px);
+        justify-content: start;
+        font-size: clamp(1.50vw, 2.5vw, 18px);
     }
+
 }
 
 .txt-dropMenu {
@@ -325,8 +335,9 @@ filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
     width: 90%;
     opacity: 0;
     transition: max-height 0.3s ease-in-out;
-    p{
-        @include flexCenter(row, 3px);
+
+    p {
+        @include flexCenter(row, 1px);
         opacity: 0;
         color: #37474F;
         font-size: clamp(1vw, 2vw, 12px);
@@ -335,31 +346,32 @@ filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
         animation: menuDrop 0.5s forwards ease-in-out;
 
         @media (max-width:430px) {
-              
             font-size: clamp(1.50vw, 3vw, 18px);
+            text-align: center;
         }
     }
 
     &.active {
         opacity: 1;
         max-height: 100px;
-        
-        
-       
+
+
+
     }
 
-    
+
 }
 
-.md-btn{
+.md-btn {
     @include flexCenter(row, 3px);
     background-color: #37474F;
     width: 50px;
+    height: 20px;
     border: 1px solid #4B2D73;
     border-radius: 5px;
 
-    a{
-        
+    a {
+
         font-size: 10px;
         color: #FFFDFB;
 
@@ -367,38 +379,38 @@ filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
 }
 
 .img-sectionMain {
-    @media screen and (max-width:905px) {
+    @media (max-width:905px) {
         order: -1;
     }
 
     .img-main {
         width: 450px;
         height: auto;
-        
-        @media screen and (max-width:1280px) {
 
-            width: 350px;
+        @media(max-width:1280px) {
+            width: 321px;
         }
 
-        @media screen and (max-width:1062px) {
-            width: 320px;
-        }
-
-        @media screen and (max-width:905px) {
+        @media (max-width:905px) {
             width: 270px;
         }
-        
+
+        @media (min-width:681px) and (max-width:840px) {
+            width: 280px;
+
+        }
+
         @media (max-width:680px) {
             width: 280px;
 
         }
 
-        @media screen and (max-width:528px) {
+        @media (max-width:528px) {
             width: 300px;
 
         }
-    
-        @media screen and (max-width:430px) {
+
+        @media (max-width:430px) {
             width: 220px;
         }
     }
@@ -423,7 +435,7 @@ footer {
                 content: '';
                 height: 2px;
                 width: 0%;
-              
+
                 background-color: #4B2D73;
                 transition: 0.5s;
             }
@@ -841,7 +853,7 @@ footer {
     border: none;
     border-radius: 10px;
     background-color: #37474F;
-    
+
     width: 90%;
     height: 40px;
     z-index: 1;
@@ -853,15 +865,15 @@ footer {
             color: #FFFDFB;
             font-size: 15px;
 
-            @media screen and (max-width:1280px) {
+            @media (max-width:1280px) {
 
 
                 @include flexCenter(row, 5px);
                 font-size: 13px;
             }
 
-            @media screen and (max-width:970px) {
-                @include flexCenter(row, 2);
+            @media (max-width:970px) {
+                @include flexCenter(row, 2px);
                 font-size: 12px;
             }
         }

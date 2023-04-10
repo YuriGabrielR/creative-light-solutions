@@ -69,27 +69,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  gap: 0px;
+  flex-direction: row;
+  gap: 1px;
   width: 100%;
   height: 100vh;
-}
-
-.content-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 10px;
-  width: 100%;
-}
-
-.descriptions-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 0px;
 }
 
 .content-descriptions {
@@ -98,20 +81,19 @@ body {
   justify-content: center;
   flex-direction: row;
   gap: 20px;
-  justify-content: space-between;
   padding: 20px;
 }
-@media screen and (max-width: 970px) {
+@media (max-width: 970px) {
   .content-descriptions {
-    gap: 0px;
+    gap: 20px;
     flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
+    padding: none;
   }
 }
-@media screen and (max-width: 430px) {
+@media (min-width: 681px) and (max-width: 840px) {
   .content-descriptions {
-    gap: 10px;
+    height: 100vh;
+    justify-content: space-around;
   }
 }
 
@@ -124,12 +106,12 @@ body {
   align-items: left;
   justify-content: start;
 }
-@media screen and (max-width: 905px) {
+@media (max-width: 905px) {
   .txt_descriptions {
     order: -1;
   }
 }
-@media screen and (max-width: 970px) {
+@media (max-width: 970px) {
   .txt_descriptions {
     gap: 30px;
   }
@@ -149,6 +131,11 @@ body {
     text-align: center;
   }
 }
+@media (min-width: 681px) and (max-width: 840px) {
+  .txt_descriptions #txt-primary {
+    font-size: 26px;
+  }
+}
 
 .main-txt {
   width: 100%;
@@ -164,14 +151,19 @@ body {
   color: #4B2D73;
   font-size: clamp(4vw, 4vw, 3.2em);
 }
-@media (max-width: 680px) {
-  .main-txt h1 {
-    font-size: clamp(5vw, 6vw, 3.2em);
-  }
-}
 @media (max-width: 970px) {
   .main-txt h1 {
     flex-direction: row;
+  }
+}
+@media (min-width: 681px) and (max-width: 840px) {
+  .main-txt h1 {
+    font-size: 36px;
+  }
+}
+@media (max-width: 680px) {
+  .main-txt h1 {
+    font-size: clamp(5vw, 5.8vw, 3.2em);
   }
 }
 .main-txt h2 {
@@ -180,15 +172,15 @@ body {
   width: 100%;
   font-family: "Edu NSW ACT Foundation", cursive;
 }
-@media (max-width: 430px) {
-  .main-txt h2 {
-    font-size: 1.8em;
-    text-align: left;
-  }
-}
 @media (max-width: 970px) {
   .main-txt h2 {
     color: #4b2d73;
+    text-align: center;
+  }
+}
+@media (max-width: 430px) {
+  .main-txt h2 {
+    font-size: 1.5em;
     text-align: center;
   }
 }
@@ -231,7 +223,7 @@ body {
   justify-content: left;
   width: 100%;
 }
-@media screen and (max-width: 905px) {
+@media (max-width: 905px) {
   .steps {
     display: none;
   }
@@ -253,7 +245,8 @@ body {
   font-size: clamp(1vw, 1.2vw, 16px);
 }
 @media (max-width: 970px) {
-  .steps-content p, .steps-content h3 {
+  .steps-content p,
+  .steps-content h3 {
     text-align: center;
   }
 }
@@ -270,9 +263,11 @@ body {
     height: 202px;
   }
 }
-@media screen and (max-width: 430px) {
+@media (max-width: 430px) {
   .drop-main {
     flex-direction: column;
+    justify-content: start;
+    align-items: center;
     height: auto;
     gap: 20px;
   }
@@ -283,10 +278,14 @@ body {
   height: auto;
   filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
 }
-@media screen and (max-width: 430px) {
+@media (max-width: 430px) {
   .drop-img {
     width: 40%;
-    gap: 10px;
+  }
+}
+@media (max-width: 430px) {
+  .drop-img {
+    width: 50%;
   }
 }
 
@@ -301,15 +300,16 @@ body {
   justify-content: center;
   flex-direction: column;
   gap: 2px;
+  justify-content: start;
   transition: 0.3s ease-in-out;
   width: 70%;
 }
-@media screen and (max-width: 430px) {
+@media (max-width: 430px) {
   .content-drop {
     flex-direction: row;
     width: 100%;
     height: auto;
-    gap: 0px;
+    gap: 12px;
   }
 }
 
@@ -321,7 +321,7 @@ body {
   gap: 3px;
   color: rgba(75, 45, 115, 0.9254901961);
   font-weight: 700;
-  font-size: clamp(1vw, 2vw, 12px);
+  font-size: clamp(1vw, 2vw, 13px);
   text-align: left;
   text-transform: uppercase;
   width: 100%;
@@ -335,14 +335,9 @@ body {
 .title-dropMenu .btnDrop.active {
   transform: rotate(180deg);
 }
-@media screen and (max-width: 430px) {
-  .title-dropMenu {
-    padding-left: 20px;
-    justify-content: left;
-  }
-}
 @media (max-width: 430px) {
   .title-dropMenu {
+    justify-content: start;
     font-size: clamp(1.5vw, 2.5vw, 18px);
   }
 }
@@ -360,7 +355,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: row;
-  gap: 3px;
+  gap: 1px;
   opacity: 0;
   color: #37474F;
   font-size: clamp(1vw, 2vw, 12px);
@@ -371,6 +366,7 @@ body {
 @media (max-width: 430px) {
   .txt-dropMenu p {
     font-size: clamp(1.5vw, 3vw, 18px);
+    text-align: center;
   }
 }
 .txt-dropMenu.active {
@@ -386,6 +382,7 @@ body {
   gap: 3px;
   background-color: #37474F;
   width: 50px;
+  height: 20px;
   border: 1px solid #4B2D73;
   border-radius: 5px;
 }
@@ -394,7 +391,7 @@ body {
   color: #FFFDFB;
 }
 
-@media screen and (max-width: 905px) {
+@media (max-width: 905px) {
   .img-sectionMain {
     order: -1;
   }
@@ -403,19 +400,19 @@ body {
   width: 450px;
   height: auto;
 }
-@media screen and (max-width: 1280px) {
+@media (max-width: 1280px) {
   .img-sectionMain .img-main {
-    width: 350px;
+    width: 321px;
   }
 }
-@media screen and (max-width: 1062px) {
-  .img-sectionMain .img-main {
-    width: 320px;
-  }
-}
-@media screen and (max-width: 905px) {
+@media (max-width: 905px) {
   .img-sectionMain .img-main {
     width: 270px;
+  }
+}
+@media (min-width: 681px) and (max-width: 840px) {
+  .img-sectionMain .img-main {
+    width: 280px;
   }
 }
 @media (max-width: 680px) {
@@ -423,12 +420,12 @@ body {
     width: 280px;
   }
 }
-@media screen and (max-width: 528px) {
+@media (max-width: 528px) {
   .img-sectionMain .img-main {
     width: 300px;
   }
 }
-@media screen and (max-width: 430px) {
+@media (max-width: 430px) {
   .img-sectionMain .img-main {
     width: 220px;
   }
@@ -856,7 +853,7 @@ footer h5 a:hover::before {
   color: #FFFDFB;
   font-size: 15px;
 }
-@media screen and (max-width: 1280px) {
+@media (max-width: 1280px) {
   .btn-projects a h3 {
     display: flex;
     align-items: center;
@@ -866,13 +863,13 @@ footer h5 a:hover::before {
     font-size: 13px;
   }
 }
-@media screen and (max-width: 970px) {
+@media (max-width: 970px) {
   .btn-projects a h3 {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: row;
-    gap: 2;
+    gap: 2px;
     font-size: 12px;
   }
 }
