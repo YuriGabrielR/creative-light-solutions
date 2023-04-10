@@ -58,7 +58,10 @@ body {
 
     }
 
+    @media (max-width:430px){
+      gap: 1px;
 
+    }
 }
 
 
@@ -323,7 +326,7 @@ body {
 
     @media (max-width:430px) {
         justify-content: start;
-        font-size: clamp(1.50vw, 2.5vw, 18px);
+        font-size: clamp(1.50vw, 2.1vw, 18px);
     }
 
 }

@@ -96,6 +96,11 @@ body {
     justify-content: space-around;
   }
 }
+@media (max-width: 430px) {
+  .content-descriptions {
+    gap: 1px;
+  }
+}
 
 .txt_descriptions {
   display: flex;
@@ -338,7 +343,7 @@ body {
 @media (max-width: 430px) {
   .title-dropMenu {
     justify-content: start;
-    font-size: clamp(1.5vw, 2.5vw, 18px);
+    font-size: clamp(1.5vw, 2.1vw, 18px);
   }
 }
 
