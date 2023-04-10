@@ -70,6 +70,12 @@ body {
 
     }
 
+    @media screen and (max-width:430px) {
+        
+     gap:10px;
+
+    }
+
 }
 
 
@@ -236,6 +242,13 @@ body {
         flex-direction: row;
         height: 202px;
     }
+
+    @media screen and (max-width:430px) {
+        flex-direction: column;
+        height: auto;
+        gap:20px;
+
+    }
 }
 
 
@@ -243,6 +256,12 @@ body {
 width: 50%;
 height: auto;
 filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
+
+    @media screen and (max-width:430px) {
+     width: 40%;
+     gap:10px;
+
+    }
 }
 
 @keyframes menuDrop {
@@ -256,13 +275,21 @@ filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
  
     transition: 0.3s ease-in-out;
     width:70%;
+
+    @media screen and (max-width:430px) {
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        gap: 0px;
+
+    }
 }
 
 .title-dropMenu {
     @include flexCenter(row, 3px);
     color: #4b2d73ec;
     font-weight: 700;
-     font-size: clamp(1vw, 2vw, 12px);
+    font-size: clamp(1vw, 2vw, 12px);
     text-align: left;
     text-transform: uppercase;
     width: 100%;
@@ -277,6 +304,17 @@ filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
         &.active{
             transform: rotate(180deg);
         }
+    }
+
+    @media screen and (max-width:430px) {
+        padding-left: 20px;
+        justify-content: left;
+    
+    }
+
+    @media (max-width:430px) {
+              
+        font-size: clamp(1.50vw, 2.50vw, 18px);
     }
 }
 
@@ -295,6 +333,11 @@ filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
         font-weight: 500;
         text-align: left;
         animation: menuDrop 0.5s forwards ease-in-out;
+
+        @media (max-width:430px) {
+              
+            font-size: clamp(1.50vw, 3vw, 18px);
+        }
     }
 
     &.active {
@@ -304,6 +347,8 @@ filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
         
        
     }
+
+    
 }
 
 .md-btn{
@@ -353,8 +398,8 @@ filter: drop-shadow(1px 0px 1px rgb(75, 45, 115));
 
         }
     
-        @media screen and (max-width:434px) {
-            width: 250px;
+        @media screen and (max-width:430px) {
+            width: 220px;
         }
     }
 
